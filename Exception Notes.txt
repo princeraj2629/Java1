@@ -1,0 +1,100 @@
+1) Explain the protected access modifier in Java. In which scenarios is it most useful, and how does it differ from private and public modifiers?
+
+Ans- By using the protected access modifier , One can create the subclasses and even it also usable at the outside of packages . If we talk about a particular scenario , then it is most useful when a member talks about the 
+inheritance.
+
+
+// Superclass in package1
+package package1;
+
+public class Superclass {
+    protected void display() {
+        System.out.println("Protected method");
+    }
+}
+java
+Copy code
+// Subclass in package2
+package package2;
+import package1.Superclass;
+
+public class Subclass extends Superclass {
+    public void invokeDisplay() {
+        display(); // Can access protected method from superclass
+    }
+
+2) If a class is defined in one package and a subclass is defined in another package, can the subclass access the protected members of the superclass? Provide an example to illustrate your answer.
+
+Ans- Yes , it is accessible by using the subclasses. Example-
+
+// Superclass in package1
+package package1;
+
+public class Superclass {
+    protected void display() {
+        System.out.println("Protected method");
+    }
+}
+java
+Copy code
+// Subclass in package2
+package package2;
+import package1.Superclass;
+
+public class Subclass extends Superclass {
+    public void invokeDisplay() {
+        display(); // Can access protected method from superclass
+    }
+
+3) How does the protected access modifier behave in the context of inheritance and package visibility? Give a scenario where using protected would be more appropriate than using private or public.
+
+Ans- 
+Behavior in Inheritance and Package Visibility:
+================================================
+
+i)  Protected members can be inherited by subclasses regardless of the package they belong to.
+ii) Within the same package, protected members behave like package-private (default) members.
+
+Appropriate Usage:
+=================
+
+> Use protected when you want to expose certain behavior to subclasses while encapsulating it from unrelated classes and its methods.
+
+) Describe the purpose of the try and catch blocks in Java exception handling. How does the finally block complement these, and when would you use it?
+
+Ans- It is used when when there is an excption the properties like arrayoutofbound,Exception e,etc.
+
+   => We use it Like ;
+   
+   int b = 0;
+   
+   try{
+   
+      int a=23/b;
+	  System.out.println("");
+	  } catch(Exception (e){
+	  System.out.println("");
+	  }
+
+
+5) What happens if an exception is thrown in a try block but there is no corresponding catch block to handle that exception? Illustrate with an example.
+
+Ans- try{
+      throw new IOException("");
+	  )
+//With No catch block throw is very helpfuyl in throwing exceptions
+
+
+6) Can you have multiple catch blocks for a single try block in Java? If yes, explain how Java determines which catch block to execute when an exception is thrown.
+
+Ans- try(
+      throw new IOException("");
+	  } catch (Exception e)
+	   System.out.println("")'
+	  } catch (ArrayoutofBoundException e);
+	  } System.out.println("")'
+	  
+	  //Multiple Catch blocks can be used easily when we have more than one exception preasent in the classes.
+	  
+	  
+===========================================================================================
